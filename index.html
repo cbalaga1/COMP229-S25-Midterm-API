@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm API Project - COMP229 Summer 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #ccc;
+            overflow-x: auto;
+        }
+        img {
+            max-width: 100%;
+        }
+        .important-box {
+            background-color: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background-color: #f8d7da;
+            border: 2px solid #dc3545;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>    <h1>Midterm API Project - COMP229 Summer 2025</h1>
+
+    <h2>Project Overview</h2>
+    <p>Your mission, should you choose to accept it, is to implement the missing logic for managing a collection of movies via an API. The server is already set up and running on port <code>3000</code>, with an array of movie objects ready for you to manipulate.</p>
+
+    <h3>Endpoints:</h3>
+    <ul>
+        <li><strong>GET /api/movies</strong> - Retrieve the full list of movies.</li>
+        <li><strong>GET /api/movies/filter?genre=[genre name]</strong> - Retrieve movies by genre match.</li>
+        <li><strong>GET /api/movies/:id</strong> - Retrieve a movie by its index (ID).</li>
+        <li><strong>POST /api/movies</strong> - Add a new movie to the collection.</li>
+        <li><strong>PUT /api/movies/:id</strong> - Update a movie by its index (ID).</li>
+        <li><strong>DELETE /api/movies/:id</strong> - Remove a movie from the collection by its index (ID).</li>
+    </ul>    <p>The array of movies is already defined for you in the <code>server.js</code> file, but <strong>you need to implement the logic</strong> for each API endpoint.</p>
+
+    <h3>Array Example:</h3>
+    <p>Below is an example of the array you'll be working with:</p>
+    <img src="images/array-example.jpg" alt="Array Example">
+
+    <div class="important-box">
+        <h2>🎬 IMPORTANT: Personalized Requirements</h2>
+        
+        <h3>You MUST personalize your movie collection based on your Student ID:</h3>
+        
+        <p><strong>Each student must add 2 additional movies to the initial array based on the last digit of their student ID:</strong></p>
+        
+        <table>
+            <tr>
+                <th>Last Digit of Student ID</th>
+                <th>Movie Requirement</th>
+            </tr>
+            <tr>
+                <td>0-1</td>
+                <td>Add 2 movies from <strong>1990-1999</strong></td>
+            </tr>
+            <tr>
+                <td>2-3</td>
+                <td>Add 2 movies from <strong>2000-2009</strong></td>
+            </tr>
+            <tr>
+                <td>4-5</td>
+                <td>Add 2 movies from <strong>2010-2019</strong></td>
+            </tr>
+            <tr>
+                <td>6-7</td>
+                <td>Add 2 movies from <strong>2020-2024</strong></td>
+            </tr>
+            <tr>
+                <td>8-9</td>
+                <td>Add 2 <strong>animated/cartoon</strong> movies (any year)</td>
+            </tr>
+        </table>
+        
+        <p><strong>Example:</strong> If your student ID is <code>301234567</code> (ends in 7), you must add 2 movies from 2020-2024.</p>
+        
+        <h4>Format for your additional movies:</h4>
+        <pre>{ title: 'Your Movie Title', genre: 'Genre', year: YYYY, director: 'Director Name' }</pre>
+        
+        <p><strong>Screenshot Requirement:</strong> You must include a <strong>screenshot of your personalized movie array</strong> showing all 7 movies (5 original + 2 your additions) in one of your API test responses.</p>
+    </div>
+
+    <h3>Postman Test Example:</h3>
+    <p>Here's an example of what your Postman test should look like when successfully testing your API:</p>
+    <img src="images/postman-example.jpg" alt="Postman Example">
+
+    <h2>Setup Instructions</h2>
+    <ol>
+        <li><strong>Clone the repository from GitHub:</strong><br>Link to repository: <a href="https://github.com/CENT-COL/COMP229-S25-MIDTERM" target="_blank">https://github.com/CENT-COL/COMP229-S25-MIDTERM</a></li>
+
+        <li><strong>Install dependencies:</strong><br>Run the following command in the root folder to install necessary Node.js packages:
+        <pre>npm install</pre></li>
+
+        <li><strong>Run the server:</strong><br>Start the server by running:
+        <pre>npm start</pre>
+        The server will be running on port <code>3000</code>.</li>        <li><strong>Test the API:</strong><br>Use API testing tools like Postman, Thunder Client, Insomnia, or similar to test your API implementation. You should:
+            <ul>
+                <li>Make a request to each API endpoint.</li>
+                <li>Provide the necessary request body where applicable (for POST and PUT).</li>
+                <li>Capture the successful response in a screenshot with proper HTTP status codes.</li>
+            </ul>
+        </li>
+    </ol>    <h2>Submission Requirements</h2>
+    <ol>
+        <li><strong>Screenshots:</strong><br>Provide <strong>clear screenshots</strong> of your API tests, showing the following:
+            <ul>
+                <li>There should be <strong>1 screenshot per Endpoint (6 in total)</strong></li>
+                <li>The API request URL and method.</li>
+                <li>The request body (where applicable).</li>
+                <li>The successful response with proper HTTP status codes.</li>
+                <li><strong>At least one screenshot must show your complete personalized movie array (7 movies total)</strong></li>
+            </ul>
+            
+            <h4>Screenshot Naming Convention:</h4>
+            <p>Name your screenshots as: <code>[StudentID]_[LastName]_[EndpointNumber]_[Method].png</code></p>
+            <p><strong>Example:</strong> <code>301234567_Smith_01_GET_ALL.png</code></p>
+        </li>
+
+        <li><strong>Code Submission:</strong><br>Include your code in a <strong>.zip</strong> file, and provide a <strong>GitHub link to your repository containing the project.</strong> Make sure all screenshots are clearly visible and organized in your submission.
+            <br><strong>Your movie array must contain your 2 personalized additions based on your student ID.</strong>
+        </li>
+    </ol>
+
+    <div class="warning-box">
+        <h2>⚠️ Academic Integrity Notice</h2>
+        <p><strong>WARNING:</strong> Your submission will be checked for:</p>
+        <ul>
+            <li>Correct personalized movie additions matching your student ID pattern</li>
+            <li>Screenshot naming convention compliance</li>
+            <li>Unique movie choices (identical movie selections will be flagged)</li>
+        </ul>
+        <p>Submissions with missing personalized content or suspicious similarities will be reviewed for academic integrity violations.</p>
+    </div>
+
+    <h2>Good luck!</h2>
+    <p>Remember, write clean code, validate your inputs, and handle errors gracefully. May your code be bug-free!</p>
+
+</body>
+</html>
